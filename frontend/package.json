@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://your-github-username.github.io/bfhl-dev-test",
+  "homepage": "https://aastha0424.github.io/bfhl-dev-test",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
