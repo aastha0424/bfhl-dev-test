@@ -5,10 +5,11 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: "https://aastha0424.github.io/bfhl-dev-test/", // Allow frontend access
+    origin: ["https://aastha0424.github.io", "https://aastha0424.github.io/bfhl-dev-test"], // Allow both URLs
     methods: "GET,POST",
     allowedHeaders: ["Content-Type"]
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
