@@ -4,7 +4,10 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: "https://aastha0424.github.io", // Allow requests from your GitHub Pages
+    methods: "GET,POST"
+}));
 app.use(express.json());
 
 // Root Route

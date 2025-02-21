@@ -10,7 +10,7 @@ const App = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://bfhl-dev-test.onrender.com", {
+      const res = await axios.post("https://bfhl-dev-test.onrender.com/bfhl", {
         data: JSON.parse(input),
       });
       setResponse(res.data);
