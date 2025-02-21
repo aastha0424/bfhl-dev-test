@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bfhl-dev-test/static/css/main.e6c13ad2.css",
+    "main.js": "/bfhl-dev-test/static/js/main.76cf0985.js",
+    "static/js/453.8ab44547.chunk.js": "/bfhl-dev-test/static/js/453.8ab44547.chunk.js",
+    "index.html": "/bfhl-dev-test/index.html",
+    "main.e6c13ad2.css.map": "/bfhl-dev-test/static/css/main.e6c13ad2.css.map",
+    "main.76cf0985.js.map": "/bfhl-dev-test/static/js/main.76cf0985.js.map",
+    "453.8ab44547.chunk.js.map": "/bfhl-dev-test/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.76cf0985.js"
+  ]
+}
