@@ -5,7 +5,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: "https://aastha0424.github.io", // Allow frontend access
+    origin: "https://aastha0424.github.io/bfhl-dev-test/", // Allow frontend access
     methods: "GET,POST",
     allowedHeaders: ["Content-Type"]
 }));
