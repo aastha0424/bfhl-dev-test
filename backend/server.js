@@ -5,14 +5,16 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: "https://aastha0424.github.io", // Allow requests from your GitHub Pages
-    methods: "GET,POST"
+    origin: "https://aastha0424.github.io", // Allow frontend access
+    methods: "GET,POST",
+    allowedHeaders: ["Content-Type"]
 }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Root Route
 app.get("/", (req, res) => {
-    res.send("Server is running 🚀");
+    res.json({ message: "Server is running 🚀" });
 });
 
 // GET /api - Test API Route
@@ -34,9 +36,9 @@ app.post("/api", (req, res) => {
 
     res.json({
         is_success: true,
-        user_id: "your_name_ddmmyyyy", // Replace with actual name and date of birth
-        email: "your_email@example.com", // Replace with your email
-        roll_number: "your_roll_number", // Replace with your roll number
+        user_id: "your_name_ddmmyyyy", // Replace with actual name and DOB
+        email: "your_email@example.com", // Replace with actual email
+        roll_number: "your_roll_number", // Replace with roll number
         numbers,
         alphabets,
         highest_alphabet
