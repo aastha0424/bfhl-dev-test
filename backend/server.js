@@ -9,6 +9,15 @@ app.get("/bfhl", (req, res) => {
     res.status(200).json({ operation_code: 1 });
 });
 
+app.get("/", (req, res) => {
+    res.send("Server is running 🚀");
+  });
+
+app.get("/bfhl", (req, res) => {
+    res.json({ message: "API is working!" });
+  });
+  
+  
 app.post("/bfhl", (req, res) => {
     const { data } = req.body;
     if (!data || !Array.isArray(data)) {
