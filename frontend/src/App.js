@@ -1,41 +1,49 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function App() {
-    const [input, setInput] = useState("");
-    const [response, setResponse] = useState(null);
-    const [error, setError] = useState("");
+const App = () => {
+  const [input, setInput] = useState("");
+  const [response, setResponse] = useState(null);
+  const [error, setError] = useState(null);
 
-    const handleSubmit = async () => {
-        try {
-            const jsonData = JSON.parse(input);
-            const res = await axios.post("http://localhost:3000/bfhl", jsonData);
-            setResponse(res.data);
-            setError("");
-        } catch (err) {
-            setError("Invalid JSON or API Error");
-            setResponse(null);
-        }
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    return (
+    try {
+      const res = await axios.post("https://bfhl-dev-test.onrender.com", {
+        data: JSON.parse(input),
+      });
+      setResponse(res.data);
+      setError(null);
+    } catch (err) {
+      setError("Error processing request.");
+      setResponse(null);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Full Stack Challenge</h1>
+      <form onSubmit={handleSubmit}>
+        <textarea
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder='Enter JSON: { "data": ["A", "1", "B", "3"] }'
+          rows="5"
+          cols="50"
+        />
+        <button type="submit">Submit</button>
+      </form>
+
+      {response && (
         <div>
-            <h1>Full Stack Challenge</h1>
-            <textarea
-                rows="5"
-                cols="50"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder='Enter JSON: { "data": ["A", "1", "B", "3"] }'
-            />
-            <button onClick={handleSubmit}>Submit</button>
-
-            {error && <p style={{ color: "red" }}>{error}</p>}
-            {response && (
-                <pre>{JSON.stringify(response, null, 2)}</pre>
-            )}
+          <h3>Response:</h3>
+          <pre>{JSON.stringify(response, null, 2)}</pre>
         </div>
-    );
-}
+      )}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+    </div>
+  );
+};
 
 export default App;
